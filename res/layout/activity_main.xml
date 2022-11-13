@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        app:layout_constraintGuide_percent="0.2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+        app:layout_constraintBottom_toTopOf="@id/guidelineCenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="00:00:00"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <com.msa.audiorecorder.canvas.WaveformView
+            android:id="@+id/waveformView"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="400px"/>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        app:layout_constraintGuide_percent="0.95"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/goToMenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/shape_circle_white"
+            android:drawableStart="@drawable/ic_menu"
+            app:drawableTint="@color/black" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/saveRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            android:background="@drawable/shape_circle_white"
+            android:drawableStart="@drawable/ic_save"
+            app:drawableTint="@color/black" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/startRecorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/shape_circle_main"
+            android:drawableStart="@drawable/ic_play"
+            app:drawableTint="@color/white" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pauseRecorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            android:background="@drawable/shape_circle_main"
+            android:drawableStart="@drawable/ic_pause"
+            app:drawableTint="@color/white" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/resumeRecorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            android:background="@drawable/shape_circle_main"
+            android:drawableStart="@drawable/ic_resume"
+            app:drawableTint="@color/white" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/finishRecordDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:visibility="gone"
+            android:background="@drawable/shape_circle_white"
+            android:drawableStart="@drawable/ic_close"
+            app:drawableTint="@color/black" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
